@@ -1,0 +1,15 @@
+E:\SEOManger\FRIST\MasterManagement\MasterManagement\bin\Debug\netcoreapp3.1\MasterManagement.exe
+E:\SEOManger\FRIST\MasterManagement\MasterManagement\bin\Debug\netcoreapp3.1\MasterManagement.deps.json
+E:\SEOManger\FRIST\MasterManagement\MasterManagement\bin\Debug\netcoreapp3.1\MasterManagement.runtimeconfig.json
+E:\SEOManger\FRIST\MasterManagement\MasterManagement\bin\Debug\netcoreapp3.1\MasterManagement.runtimeconfig.dev.json
+E:\SEOManger\FRIST\MasterManagement\MasterManagement\bin\Debug\netcoreapp3.1\MasterManagement.dll
+E:\SEOManger\FRIST\MasterManagement\MasterManagement\bin\Debug\netcoreapp3.1\MasterManagement.pdb
+E:\SEOManger\FRIST\MasterManagement\MasterManagement\obj\Debug\netcoreapp3.1\MasterManagement.csprojAssemblyReference.cache
+E:\SEOManger\FRIST\MasterManagement\MasterManagement\obj\Debug\netcoreapp3.1\MasterManagement.Form1.resources
+E:\SEOManger\FRIST\MasterManagement\MasterManagement\obj\Debug\netcoreapp3.1\MasterManagement.csproj.GenerateResource.cache
+E:\SEOManger\FRIST\MasterManagement\MasterManagement\obj\Debug\netcoreapp3.1\MasterManagement.AssemblyInfoInputs.cache
+E:\SEOManger\FRIST\MasterManagement\MasterManagement\obj\Debug\netcoreapp3.1\MasterManagement.AssemblyInfo.cs
+E:\SEOManger\FRIST\MasterManagement\MasterManagement\obj\Debug\netcoreapp3.1\MasterManagement.csproj.CoreCompileInputs.cache
+E:\SEOManger\FRIST\MasterManagement\MasterManagement\obj\Debug\netcoreapp3.1\MasterManagement.dll
+E:\SEOManger\FRIST\MasterManagement\MasterManagement\obj\Debug\netcoreapp3.1\MasterManagement.pdb
+E:\SEOManger\FRIST\MasterManagement\MasterManagement\obj\Debug\netcoreapp3.1\MasterManagement.genruntimeconfig.cache

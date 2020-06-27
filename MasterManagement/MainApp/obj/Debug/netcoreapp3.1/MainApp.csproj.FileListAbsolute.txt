@@ -1,0 +1,9 @@
+E:\SEOManger\FRIST\MasterManagement\MainApp\bin\Debug\netcoreapp3.1\MainApp.deps.json
+E:\SEOManger\FRIST\MasterManagement\MainApp\bin\Debug\netcoreapp3.1\MainApp.dll
+E:\SEOManger\FRIST\MasterManagement\MainApp\bin\Debug\netcoreapp3.1\MainApp.pdb
+E:\SEOManger\FRIST\MasterManagement\MainApp\obj\Debug\netcoreapp3.1\MainApp.AssemblyInfoInputs.cache
+E:\SEOManger\FRIST\MasterManagement\MainApp\obj\Debug\netcoreapp3.1\MainApp.AssemblyInfo.cs
+E:\SEOManger\FRIST\MasterManagement\MainApp\obj\Debug\netcoreapp3.1\MainApp.csproj.CoreCompileInputs.cache
+E:\SEOManger\FRIST\MasterManagement\MainApp\obj\Debug\netcoreapp3.1\MainApp.dll
+E:\SEOManger\FRIST\MasterManagement\MainApp\obj\Debug\netcoreapp3.1\MainApp.pdb
+E:\SEOManger\FRIST\MasterManagement\MainApp\obj\Debug\netcoreapp3.1\MainApp.csprojAssemblyReference.cache
