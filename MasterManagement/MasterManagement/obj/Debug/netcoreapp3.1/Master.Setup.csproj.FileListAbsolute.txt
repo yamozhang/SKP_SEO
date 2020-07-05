@@ -11,3 +11,10 @@ E:\SEOManger\FRIST\MasterManagement\MasterManagement\obj\Debug\netcoreapp3.1\Mas
 E:\SEOManger\FRIST\MasterManagement\MasterManagement\obj\Debug\netcoreapp3.1\Master.Setup.dll
 E:\SEOManger\FRIST\MasterManagement\MasterManagement\obj\Debug\netcoreapp3.1\Master.Setup.pdb
 E:\SEOManger\FRIST\MasterManagement\MasterManagement\obj\Debug\netcoreapp3.1\Master.Setup.genruntimeconfig.cache
+E:\SEOManger\FRIST\MasterManagement\Bin\netcoreapp3.1\Master.Setup.exe
+E:\SEOManger\FRIST\MasterManagement\Bin\netcoreapp3.1\Master.Setup.deps.json
+E:\SEOManger\FRIST\MasterManagement\Bin\netcoreapp3.1\Master.Setup.runtimeconfig.json
+E:\SEOManger\FRIST\MasterManagement\Bin\netcoreapp3.1\Master.Setup.runtimeconfig.dev.json
+E:\SEOManger\FRIST\MasterManagement\Bin\netcoreapp3.1\Master.Setup.dll
+E:\SEOManger\FRIST\MasterManagement\Bin\netcoreapp3.1\Master.Setup.pdb
+E:\SEOManger\FRIST\MasterManagement\MasterManagement\obj\Debug\netcoreapp3.1\Master.Setup.csproj.CopyComplete

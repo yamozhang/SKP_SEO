@@ -7,3 +7,9 @@ E:\SEOManger\FRIST\MasterManagement\MainApp\obj\Debug\netcoreapp3.1\MainApp.cspr
 E:\SEOManger\FRIST\MasterManagement\MainApp\obj\Debug\netcoreapp3.1\MainApp.dll
 E:\SEOManger\FRIST\MasterManagement\MainApp\obj\Debug\netcoreapp3.1\MainApp.pdb
 E:\SEOManger\FRIST\MasterManagement\MainApp\obj\Debug\netcoreapp3.1\MainApp.csprojAssemblyReference.cache
+E:\SEOManger\FRIST\MasterManagement\Bin\netcoreapp3.1\MainApp.deps.json
+E:\SEOManger\FRIST\MasterManagement\Bin\netcoreapp3.1\MainApp.dll
+E:\SEOManger\FRIST\MasterManagement\Bin\netcoreapp3.1\MainApp.pdb
+E:\SEOManger\FRIST\MasterManagement\MainApp\obj\Debug\netcoreapp3.1\MainApp.MainForm.resources
+E:\SEOManger\FRIST\MasterManagement\MainApp\obj\Debug\netcoreapp3.1\MainApp.csproj.GenerateResource.cache
+E:\SEOManger\FRIST\MasterManagement\MainApp\obj\Debug\netcoreapp3.1\MainApp.csproj.CopyComplete

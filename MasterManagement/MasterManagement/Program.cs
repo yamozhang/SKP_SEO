@@ -1,5 +1,7 @@
+using MainApp;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,7 +19,10 @@ namespace Master.Setup
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run();
+
+            MainForm main = new MainForm();
+            Start.StartUp(main);
+            Application.Run(main);
         }
     }
 }

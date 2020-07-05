@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "MFrameworke.Base/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/MFrameworke.Base.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MFrameworke.Base.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "MFrameworke.Base/1.0.0": {
+      "type": "project",
+      "path": "../MFrameworke.Base/MFrameworke.Base.csproj",
+      "msbuildProject": "../MFrameworke.Base/MFrameworke.Base.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "MFrameworke.Base >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Administrator\\.nuget\\packages\\": {}
@@ -32,7 +51,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\SEOManger\\FRIST\\MasterManagement\\MFrameworke.Base\\MFrameworke.Base.csproj": {
+              "projectPath": "E:\\SEOManger\\FRIST\\MasterManagement\\MFrameworke.Base\\MFrameworke.Base.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

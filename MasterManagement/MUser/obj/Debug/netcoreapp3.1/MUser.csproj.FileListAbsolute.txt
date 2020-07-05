@@ -1,9 +1,9 @@
-E:\SEOManger\FRIST\MasterManagement\MUser\bin\Debug\netcoreapp3.1\MUser.deps.json
-E:\SEOManger\FRIST\MasterManagement\MUser\bin\Debug\netcoreapp3.1\MUser.dll
-E:\SEOManger\FRIST\MasterManagement\MUser\bin\Debug\netcoreapp3.1\MUser.pdb
-E:\SEOManger\FRIST\MasterManagement\MUser\obj\Debug\netcoreapp3.1\MUser.csprojAssemblyReference.cache
+E:\SEOManger\FRIST\MasterManagement\Bin\netcoreapp3.1\MUser.deps.json
+E:\SEOManger\FRIST\MasterManagement\Bin\netcoreapp3.1\MUser.dll
+E:\SEOManger\FRIST\MasterManagement\Bin\netcoreapp3.1\MUser.pdb
 E:\SEOManger\FRIST\MasterManagement\MUser\obj\Debug\netcoreapp3.1\MUser.AssemblyInfoInputs.cache
 E:\SEOManger\FRIST\MasterManagement\MUser\obj\Debug\netcoreapp3.1\MUser.AssemblyInfo.cs
 E:\SEOManger\FRIST\MasterManagement\MUser\obj\Debug\netcoreapp3.1\MUser.csproj.CoreCompileInputs.cache
+E:\SEOManger\FRIST\MasterManagement\MUser\obj\Debug\netcoreapp3.1\MUser.csproj.CopyComplete
 E:\SEOManger\FRIST\MasterManagement\MUser\obj\Debug\netcoreapp3.1\MUser.dll
 E:\SEOManger\FRIST\MasterManagement\MUser\obj\Debug\netcoreapp3.1\MUser.pdb

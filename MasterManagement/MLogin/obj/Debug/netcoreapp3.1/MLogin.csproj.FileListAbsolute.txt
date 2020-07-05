@@ -7,3 +7,6 @@ E:\SEOManger\FRIST\MasterManagement\MLogin\bin\Debug\netcoreapp3.1\MLogin.dll
 E:\SEOManger\FRIST\MasterManagement\MLogin\bin\Debug\netcoreapp3.1\MLogin.pdb
 E:\SEOManger\FRIST\MasterManagement\MLogin\obj\Debug\netcoreapp3.1\MLogin.dll
 E:\SEOManger\FRIST\MasterManagement\MLogin\obj\Debug\netcoreapp3.1\MLogin.pdb
+E:\SEOManger\FRIST\MasterManagement\Bin\netcoreapp3.1\MLogin.deps.json
+E:\SEOManger\FRIST\MasterManagement\Bin\netcoreapp3.1\MLogin.dll
+E:\SEOManger\FRIST\MasterManagement\Bin\netcoreapp3.1\MLogin.pdb

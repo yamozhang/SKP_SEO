@@ -1,11 +1,51 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "MainApp/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "MFrameworke.Base": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MainApp.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MainApp.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
+      "MFrameworke.Base/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/MFrameworke.Base.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MFrameworke.Base.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "MainApp/1.0.0": {
+      "type": "project",
+      "path": "../MainApp/MainApp.csproj",
+      "msbuildProject": "../MainApp/MainApp.csproj"
+    },
+    "MFrameworke.Base/1.0.0": {
+      "type": "project",
+      "path": "../MFrameworke.Base/MFrameworke.Base.csproj",
+      "msbuildProject": "../MFrameworke.Base/MFrameworke.Base.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "MainApp >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Administrator\\.nuget\\packages\\": {}
@@ -32,7 +72,11 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\SEOManger\\FRIST\\MasterManagement\\MainApp\\MainApp.csproj": {
+              "projectPath": "E:\\SEOManger\\FRIST\\MasterManagement\\MainApp\\MainApp.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
