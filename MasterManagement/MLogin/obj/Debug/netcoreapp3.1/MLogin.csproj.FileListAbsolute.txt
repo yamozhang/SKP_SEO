@@ -1,9 +1,0 @@
-E:\SEOManger\FRIST\MasterManagement\MLogin\obj\Debug\netcoreapp3.1\MLogin.csprojAssemblyReference.cache
-E:\SEOManger\FRIST\MasterManagement\MLogin\obj\Debug\netcoreapp3.1\MLogin.AssemblyInfoInputs.cache
-E:\SEOManger\FRIST\MasterManagement\MLogin\obj\Debug\netcoreapp3.1\MLogin.AssemblyInfo.cs
-E:\SEOManger\FRIST\MasterManagement\MLogin\obj\Debug\netcoreapp3.1\MLogin.csproj.CoreCompileInputs.cache
-E:\SEOManger\FRIST\MasterManagement\MLogin\bin\Debug\netcoreapp3.1\MLogin.deps.json
-E:\SEOManger\FRIST\MasterManagement\MLogin\bin\Debug\netcoreapp3.1\MLogin.dll
-E:\SEOManger\FRIST\MasterManagement\MLogin\bin\Debug\netcoreapp3.1\MLogin.pdb
-E:\SEOManger\FRIST\MasterManagement\MLogin\obj\Debug\netcoreapp3.1\MLogin.dll
-E:\SEOManger\FRIST\MasterManagement\MLogin\obj\Debug\netcoreapp3.1\MLogin.pdb

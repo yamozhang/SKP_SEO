@@ -361,4 +361,6 @@ FodyWeavers.xsd
 
 # bin
 bin
+Bin/*
+obj
 .vs

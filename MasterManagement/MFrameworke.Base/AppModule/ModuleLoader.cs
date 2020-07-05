@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Linq;
 using System.IO;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Data;
 
 namespace MFrameworke.Base.AppModule
 {
@@ -10,16 +12,25 @@ namespace MFrameworke.Base.AppModule
         /// <summary>
         /// Module加载
         /// </summary>
-        public static IModule LoadModule(string path)
+        public static IModule LoadModule(string mDllPath)
         {
-            if (!File.Exists(path))
+            if (!File.Exists(mDllPath))
                 return null;
 
-            Assembly assembly = Assembly.LoadFrom(path);
-            Type module = assembly.GetType("MFrameworke.Base.AppModule.IModule");
-            if (module == null)
+            try
+            {
+                Assembly assembly = Assembly.LoadFrom(mDllPath);
+                Type mType = typeof(IModule);
+                Type module = assembly.GetTypes()?
+                                      .FirstOrDefault(t => mType.IsAssignableFrom(t) && t.IsClass && !t.IsAbstract);
+
+                return module != null ? (IModule)Activator.CreateInstance(module, false) : null;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"{DateTime.Now:yyyy/MM/dd hh:mm:ss} - {ex.Message} - 模块加载失败。");
                 return null;
-            return;
+            }
         }
 
         public static IEnumerable<IModule> LoadModules(string dirPaht)
