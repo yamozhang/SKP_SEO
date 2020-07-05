@@ -360,6 +360,7 @@ MigrationBackup/
 FodyWeavers.xsd
 
 # bin
-bin/
-obj/
-.vs/
+bin
+Bin/*
+obj
+.vs

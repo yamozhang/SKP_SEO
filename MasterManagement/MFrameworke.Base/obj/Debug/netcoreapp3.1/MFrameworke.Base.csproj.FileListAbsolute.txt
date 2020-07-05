@@ -1,9 +1,0 @@
-E:\SEOManger\FRIST\MasterManagement\MFrameworke.Base\bin\Debug\netcoreapp3.1\MFrameworke.Base.deps.json
-E:\SEOManger\FRIST\MasterManagement\MFrameworke.Base\bin\Debug\netcoreapp3.1\MFrameworke.Base.dll
-E:\SEOManger\FRIST\MasterManagement\MFrameworke.Base\bin\Debug\netcoreapp3.1\MFrameworke.Base.pdb
-E:\SEOManger\FRIST\MasterManagement\MFrameworke.Base\obj\Debug\netcoreapp3.1\MFrameworke.Base.csprojAssemblyReference.cache
-E:\SEOManger\FRIST\MasterManagement\MFrameworke.Base\obj\Debug\netcoreapp3.1\MFrameworke.Base.AssemblyInfoInputs.cache
-E:\SEOManger\FRIST\MasterManagement\MFrameworke.Base\obj\Debug\netcoreapp3.1\MFrameworke.Base.AssemblyInfo.cs
-E:\SEOManger\FRIST\MasterManagement\MFrameworke.Base\obj\Debug\netcoreapp3.1\MFrameworke.Base.csproj.CoreCompileInputs.cache
-E:\SEOManger\FRIST\MasterManagement\MFrameworke.Base\obj\Debug\netcoreapp3.1\MFrameworke.Base.dll
-E:\SEOManger\FRIST\MasterManagement\MFrameworke.Base\obj\Debug\netcoreapp3.1\MFrameworke.Base.pdb
