@@ -1,6 +1,6 @@
 ﻿namespace MLogin
 {
-    partial class Form1
+    partial class AppLoginForm
     {
         /// <summary>
         ///  Required designer variable.

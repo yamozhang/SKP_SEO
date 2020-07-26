@@ -7,10 +7,10 @@ namespace MFrameworke.Base.AppModule
     /// <summary>
     /// 程序默认全局的ModuleManager实例
     /// </summary>
-    public class ModuleManageProvider
+    public class ModuleManageCurrent
     {
 
-        static ModuleManageProvider()
+        static ModuleManageCurrent()
         {
             _current = new DefaultModuleManage();
         }

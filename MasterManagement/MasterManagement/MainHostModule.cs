@@ -46,11 +46,11 @@ namespace Master.Setup
                 this.Render.VisualModule(modul);
         }
 
-
         public object ExcuteCommand(object obj)
         {
             return null;
         }
+
 
         public void Dispose()
         {

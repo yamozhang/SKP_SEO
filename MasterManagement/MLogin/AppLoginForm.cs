@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MLogin
 {
-    public partial class Form1 : Form
+    public partial class AppLoginForm : Form
     {
-        public Form1()
+        public AppLoginForm()
         {
             InitializeComponent();
         }

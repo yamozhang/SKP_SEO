@@ -20,9 +20,7 @@ namespace Master.Setup
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            MainForm main = new MainForm();
-            Start.StartUp(main);
-            Application.Run(main);
+            AppStart.StartUp();
         }
     }
 }

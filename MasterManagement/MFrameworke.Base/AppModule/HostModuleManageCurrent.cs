@@ -7,9 +7,9 @@ namespace MFrameworke.Base.AppModule
     /// <summary>
     /// 程序全局默认的HostModuleManage
     /// </summary>
-    public class HostModuleManageProvider
+    public class HostModuleManageCurrent
     {
-        static HostModuleManageProvider()
+        static HostModuleManageCurrent()
         {
             _current = new DefaultHostModuleBuilder().GetHostModule();
         }
