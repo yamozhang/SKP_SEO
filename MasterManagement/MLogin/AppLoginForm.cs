@@ -17,5 +17,12 @@ namespace MLogin
             InitializeComponent();
         }
 
+        public bool IsLogin { get; private set; }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.IsLogin = true;
+            this.Close();
+        }
     }
 }

@@ -15,13 +15,13 @@ namespace MainApp
         {
             InitializeComponent();
 
-            this.modules = new List<ModuleInfo>();
+            this.modules = new List<ModuleContent>();
             this.curModule = null;
         }
 
 
-        private List<ModuleInfo> modules;//加载过的模块
-        private ModuleInfo? curModule;    //当前呈现的模块
+        private List<ModuleContent> modules;//加载过的模块
+        private ModuleContent? curModule;    //当前呈现的模块
 
 
         #region privat method
@@ -35,9 +35,9 @@ namespace MainApp
             };
         }
         //记录模块信息
-        private ModuleInfo RegsiterModule(Panel moduleContiner, object[] components)
+        private ModuleContent RegsiterModule(Panel moduleContiner, object[] components)
         {
-            ModuleInfo module = new ModuleInfo();
+            ModuleContent module = new ModuleContent();
             foreach (object componet in components)
             {
                 if (componet is TreeNode)
@@ -57,7 +57,7 @@ namespace MainApp
             return module;
         }
         //绑定模块UI界面
-        private void LoadModuleUI(ModuleInfo module)
+        private void LoadModuleUI(ModuleContent module)
         {
             //如果没有任何模块加载过，则将module的ui加载只界面
             if (this.curModule == null)
@@ -70,7 +70,7 @@ namespace MainApp
             if (module.ModuleNode != null)
                 this.tree_nav.Nodes.Add(module.ModuleNode);
         }
-        private void UnInstallUI(ModuleInfo module)
+        private void UnInstallUI(ModuleContent module)
         {
             if (module.ModuleNode != null)
                 this.tree_nav.Nodes.Remove(module.ModuleNode);
@@ -79,7 +79,7 @@ namespace MainApp
                 this.split_Master.Panel2.Controls.Remove(module.ModulePanel);
         }
         //切换模块之间的页面
-        private void SwitchModuleUI(ModuleInfo module)
+        private void SwitchModuleUI(ModuleContent module)
         {
             if (module == null || this.curModule == null || module == this.curModule)
                 return;
@@ -103,7 +103,7 @@ namespace MainApp
 
             
             //找到对应的节点，进行事件处理
-            ModuleInfo module = this.modules.FirstOrDefault(m => object.ReferenceEquals(root, m.ModuleNode));
+            ModuleContent module = this.modules.FirstOrDefault(m => object.ReferenceEquals(root, m.ModuleNode));
 
             this.SwitchModuleUI(module);
             this.curModule = module;
@@ -126,10 +126,10 @@ namespace MainApp
             if (components == null && components.Length < 1)
                 return;
 
-            ModuleInfo moduleInfo = this.RegsiterModule(moduleContiner, components);
-            moduleInfo.Module = module;
-            this.LoadModuleUI(moduleInfo);
-            this.modules.Add(moduleInfo);
+            ModuleContent content = this.RegsiterModule(moduleContiner, components);
+            content.Module = module;
+            this.LoadModuleUI(content);
+            this.modules.Add(content);
         }
         //卸载模块UI
         public void UnInstallModule(IModule module)
@@ -145,7 +145,7 @@ namespace MainApp
         /// <summary>
         /// 模块的信息
         /// </summary>
-        private struct ModuleInfo
+        private struct ModuleContent
         {
             internal IModule Module;
             internal TreeNode ModuleNode;
@@ -163,7 +163,7 @@ namespace MainApp
             }
 
 
-            public static bool operator ==(ModuleInfo a, ModuleInfo b)
+            public static bool operator ==(ModuleContent a, ModuleContent b)
             {
                 if (a == null && b == null)
                     return true;
@@ -172,7 +172,7 @@ namespace MainApp
 
                 return a.Module == b.Module;
             }
-            public static bool operator !=(ModuleInfo a, ModuleInfo b)
+            public static bool operator !=(ModuleContent a, ModuleContent b)
             {
                 if (a == null && b == null)
                     return false;

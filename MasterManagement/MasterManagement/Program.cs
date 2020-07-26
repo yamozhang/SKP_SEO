@@ -20,7 +20,7 @@ namespace Master.Setup
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            AppStart.StartUp();
+            new AppStart().StartUp();
         }
     }
 }

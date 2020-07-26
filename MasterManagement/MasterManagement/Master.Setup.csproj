@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MainApp\MainApp.csproj" />
+    <ProjectReference Include="..\MLogin\MLogin.csproj" />
   </ItemGroup>
 
 </Project>
