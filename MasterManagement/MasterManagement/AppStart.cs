@@ -1,6 +1,7 @@
 ﻿using System;
 using MainApp;
 using MLogin;
+using MAppServices;
 using System.Windows.Forms;
 using Master.Setup.AppExecute;
 using MFrameworke.Base.AppModule;
@@ -21,16 +22,29 @@ namespace Master.Setup
         //启动程序
         internal void StartUp()
         {
-            this.BuilderAuth();
-            this.BuillderMainApp();
+            this.BuilderService();//设置程序服务启动
+            this.BuilderAuth();//生成验证过程
+            this.BuillderMainApp();//主程序启动过程
             this.App.Builder?.Invoke(null);
+        }
+
+
+        //设置程序服务启动
+        internal void BuilderService()
+        {
+            this.App.Use(pre=> {
+                return context => {
+                    pre?.Invoke(context);
+                    AppService.Start();
+                };
+            });   
         }
         //设置登录验证
         internal  void BuilderAuth()
         {
             this.App.Use(pre => {
-                return contenxt => {
-                    pre?.Invoke(contenxt);
+                return context => {
+                    pre?.Invoke(context);
                     using (AppLoginForm login = new AppLoginForm())
                     {
                         Application.Run(login);
@@ -53,6 +67,9 @@ namespace Master.Setup
             });
         }
 
+
+
+
         /// <summary>
         /// 设置HostModule
         /// </summary>
@@ -64,7 +81,6 @@ namespace Master.Setup
             HostModuleManageCurrent.Current.SetHostModule(HostModule);
             HostModuleManageCurrent.Current.RegisterModuleToHost();
         }
-      
         /// <summary>
         /// 启动主程序
         /// </summary>

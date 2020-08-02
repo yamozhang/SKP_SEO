@@ -10,14 +10,4 @@
     <OutputPath>../Bin</OutputPath>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <OutputPath>../Bin</OutputPath>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\EventBus\MEventBus.csproj" />
-    <ProjectReference Include="..\MFrameworke.Base\MFrameworke.Base.csproj" />
-    <ProjectReference Include="..\MUIFW\MUIFW.csproj" />
-  </ItemGroup>
-
 </Project>

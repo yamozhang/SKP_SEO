@@ -15,4 +15,9 @@
     <OutputPath>../Bin</OutputPath>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\EventBus\MEventBus.csproj" />
+    <ProjectReference Include="..\MUIFW\MUIFW.csproj" />
+  </ItemGroup>
+
 </Project>

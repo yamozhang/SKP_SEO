@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MUIFW;
+using System;
+using MEventBus;
 using System.Windows.Forms;
 
 namespace MLogin
@@ -21,8 +16,25 @@ namespace MLogin
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.IsLogin = true;
-            this.Close();
+            this.Cursor = Cursors.WaitCursor;
+            TaskPromise task = EventBus.Bus.PublishEvent(null, this, new
+            {
+                controler = "UserLogin",
+                action = "Login",
+                userName = this.txt_name.Text,
+                password = this.txt_password.Text
+            });
+
+            task.SetComplete(this, (a) =>
+            {
+                this.Cursor = Cursors.Default;
+
+                this.IsLogin = a.TakeResult<bool>();
+                if (this.IsLogin)
+                    this.Close();
+                else
+                    MessageBox.Show(this, "登录失败！", "提示：");
+            });
         }
     }
 }

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using MFrameworke.Base.AppModule;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MUser
 {
@@ -32,17 +30,9 @@ namespace MUser
             tip.Text = "这是用户管理界面";
             tip.AutoSize = true;
 
-            Panel p = new Panel();
-            p.Dock = DockStyle.Fill;
-            p.Controls.Add(tip);
-
-            return new object[] { 
-                nav, 
-                p,
-                new Action<object,string>((node,path) => { 
-                    //用于响应节点选择之后的事见
-                    tip.Text = "用户管理：" + ((TreeNode)node).Text;
-                })
+            return new object[] {
+                nav,
+                new UserPanel()
             };
         }
     }
