@@ -15,14 +15,18 @@ namespace MUser
             this.BorderStyle = BorderStyle.FixedSingle;
             this.Dock = DockStyle.Fill;
         }
-
+        
         private void btn_search_Click(object sender, EventArgs e)
         {
-            EventBus.Bus.PublishEvent(null,this,new { 
-                controler = "UserLogin",
-                action = "GetUsers"
-            }).SetComplete(this, p => {
-                this.RefreshListView(p.TakeResult<List<User>>());
+            EventBus.Bus.PublishEvent(null, this, new
+            {
+                controler = "UserBusiness",
+                action = "GetName",
+                name = "石登明"
+            }).SetComplete(this, p =>
+            {
+                MessageBox.Show(p.TakeResult<string>());
+                //this.RefreshListView(p.TakeResult<List<User>>());
             });
         }
 

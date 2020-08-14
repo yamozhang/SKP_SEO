@@ -23,7 +23,7 @@ namespace MEventBus
         }
 
         /// <summary>
-        /// 处理事件
+        /// 处理事件   承若
         /// </summary>
         TaskPromise Listening(Event e);
     }

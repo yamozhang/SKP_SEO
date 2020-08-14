@@ -30,6 +30,7 @@ namespace MBusiness.Controls
 
         public List<User> GetUsers()
         {
+            System.Threading.Thread.Sleep(10000); 
             return new List<User>() {
                 new User(){
                     Name ="YMZ",
@@ -48,5 +49,6 @@ namespace MBusiness.Controls
                 }
             };
         }
+
     }
 }

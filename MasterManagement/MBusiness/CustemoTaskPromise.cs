@@ -12,9 +12,13 @@ namespace MBusiness
         public override bool IsComplete => this.Complete;
         public override bool IsFail => this.Fail;
         public override Exception Exception => this.Error;
-
-
-
+        
+        //反射     
+        /*
+         C# OOP    ===>  指令(顺序/pop)
+         编译器   ==>  IL(中间语言，接近汇编)     table（元数据） => 方法名/属性名/字段/事件 等等等等（运行时）
+         JIT     (运行时)==>   (即时)编译中间语言   ==> 二进制代码
+         */
         internal bool Complete { get; set; }
         internal bool Fail { get; set; }
         internal Exception Error { get; set; }

@@ -21,7 +21,7 @@ namespace MEventBus
 
 
         /// <summary>
-        /// 事件源
+        /// 事件源    
         /// </summary>
         public object Source { get; }
         /// <summary>
