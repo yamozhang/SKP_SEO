@@ -33,7 +33,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MAppServices", "AppServices
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MBusiness", "MBusiness\MBusiness.csproj", "{F08C677F-F1FC-47A1-9B78-A9CC95BF7286}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MUIFW", "MUIFW\MUIFW.csproj", "{5CA47F08-969F-43E1-BF87-5D7B04F71B92}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Share", "Share", "{1C9955B2-4A83-4433-AFE6-46D41FFE2A93}"
+	ProjectSection(SolutionItems) = preProject
+		Share\UI\ControlExtension.cs = Share\UI\ControlExtension.cs
+		Share\UI\TaskPromiseExtension.cs = Share\UI\TaskPromiseExtension.cs
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,10 +81,6 @@ Global
 		{F08C677F-F1FC-47A1-9B78-A9CC95BF7286}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F08C677F-F1FC-47A1-9B78-A9CC95BF7286}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F08C677F-F1FC-47A1-9B78-A9CC95BF7286}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5CA47F08-969F-43E1-BF87-5D7B04F71B92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5CA47F08-969F-43E1-BF87-5D7B04F71B92}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5CA47F08-969F-43E1-BF87-5D7B04F71B92}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5CA47F08-969F-43E1-BF87-5D7B04F71B92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -93,7 +93,7 @@ Global
 		{EF68D4F4-EEE2-43F9-9BF4-765B604E1E58} = {10CE3D4D-9DE6-4448-B4F0-638CC349C09C}
 		{5723137F-52FC-4CD2-B0F8-19D6830B4709} = {06BEA6B7-8B24-45DD-A6B3-E1BD14687531}
 		{F08C677F-F1FC-47A1-9B78-A9CC95BF7286} = {5DBDD27C-E55E-480B-B4C1-2FB4B0245B2C}
-		{5CA47F08-969F-43E1-BF87-5D7B04F71B92} = {43E2B467-8C82-433A-A5BE-ED1FBF1CCB55}
+		{1C9955B2-4A83-4433-AFE6-46D41FFE2A93} = {43E2B467-8C82-433A-A5BE-ED1FBF1CCB55}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92EEF5EC-D980-4ABF-BAC8-95163A03F16C}

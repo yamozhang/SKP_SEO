@@ -1,5 +1,5 @@
-﻿using MUIFW;
-using System;
+﻿using System;
+using Share.UI;
 using MEventBus;
 using System.Windows.Forms;
 

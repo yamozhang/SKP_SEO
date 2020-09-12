@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Master.Setup.AppExecute
+namespace MFrameworke.Base.AppExecute
 {
-    internal class AppExecuteContext
+    public class AppExecuteContext
     {
     }
 }

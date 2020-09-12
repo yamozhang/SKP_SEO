@@ -1,11 +1,10 @@
-﻿using System;
+using System;
 using MEventBus;
 using System.Windows.Forms;
-using MUIFW;
 
-namespace MLogin
+namespace Share.UI
 {
-    internal static class TaskPromiseExtend
+    internal static class TaskPromiseExtend1
     {
         public static void SetComplete(this TaskPromise promise, Control control, Action<TaskPromise> callback)
         {
@@ -20,7 +19,7 @@ namespace MLogin
             }
 
             promise.SetCompleteInvoke(p => {
-                control.BeginUI(callback, p);
+                control.InvokeAsync(callback, p);
             });
         }
     }

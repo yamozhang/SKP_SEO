@@ -1,6 +1,6 @@
-﻿using MEventBus;
-using MLogin;
-using System;
+﻿using System;
+using Share.UI;
+using MEventBus;
 using MEventBus.UI;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -26,10 +26,9 @@ namespace MUser
             }).SetComplete(this, p =>
             {
                 MessageBox.Show(p.TakeResult<string>());
-                //this.RefreshListView(p.TakeResult<List<User>>());
             });
         }
-
+        
 
         private void RefreshListView(List<User> users)
         {

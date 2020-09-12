@@ -19,8 +19,7 @@ namespace Master.Setup
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            new AppStart().StartUp();
+            AppStart.StartUp();
         }
     }
 }
