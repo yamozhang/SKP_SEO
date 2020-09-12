@@ -56,8 +56,6 @@ namespace MFrameworke.Base.AppModule
         {
             this.HostModule?.Dispose();
         }
-
-
         public void Render()
         {
             if (this.HostModule == null)

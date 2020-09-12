@@ -15,6 +15,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AppServices\MAppServices.csproj" />
     <ProjectReference Include="..\MainApp\MainApp.csproj" />
     <ProjectReference Include="..\MLogin\MLogin.csproj" />
   </ItemGroup>

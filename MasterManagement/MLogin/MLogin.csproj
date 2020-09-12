@@ -15,4 +15,13 @@
     <OutputPath>../Bin</OutputPath>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Include="..\Share\UI\ControlExtension.cs" Link="ControlExtension.cs" />
+    <Compile Include="..\Share\UI\TaskPromiseExtension.cs" Link="TaskPromiseExtension.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EventBus\MEventBus.csproj" />
+  </ItemGroup>
+
 </Project>

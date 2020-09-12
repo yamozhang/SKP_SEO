@@ -30,6 +30,7 @@ namespace MainApp
         {
             return new Panel()
             {
+                Dock = DockStyle.Fill,
                 Name = "ModulePanel." + module.Name,
                 Visible = true,
             };
