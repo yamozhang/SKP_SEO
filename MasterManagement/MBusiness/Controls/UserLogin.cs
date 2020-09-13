@@ -21,9 +21,6 @@ namespace MBusiness.Controls
         {
             return Task.Factory.StartNew(() =>
             {
-                DateTime time = DateTime.Now.AddSeconds(4);
-                while (DateTime.Now < time)
-                { }
                 return userName == "ymz" && password == "123";
             });
         }

@@ -21,17 +21,28 @@ namespace Master.Setup
         internal AppLine App { get; set; }
 
 
+        private void UserCatchError()
+        {
+            this.App.Use(_ => context => {
+                try
+                {
+                    _(context);
+                }
+                catch
+                { }
+            });
+        }
 
         //启动程序
         internal static void StartUp()
         {
             AppStart start = new AppStart();
-            start.UseService();  //设置程序服务启动
-            start.UseAuth();     //生成验证过程
-            start.UseMainApp();  //主程序启动过程
-            start.App.Use(_ => context => { }); //default 
 
-            start.App.Builder?.Invoke(null);
+            start.UserCatchError(); //使用异常处理
+            start.UseService();     //设置程序服务启动
+            start.UseAuth();        //生成验证过程
+            start.UseMainApp();     //主程序启动过程
+            start.App.Execute();    //执行程序
         }
     }
 }

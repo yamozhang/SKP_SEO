@@ -4,6 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
+    <StartupObject>Master.Setup.Program</StartupObject>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -18,6 +19,12 @@
     <ProjectReference Include="..\AppServices\MAppServices.csproj" />
     <ProjectReference Include="..\MainApp\MainApp.csproj" />
     <ProjectReference Include="..\MLogin\MLogin.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="app.config.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

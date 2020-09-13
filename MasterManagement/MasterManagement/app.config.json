@@ -1,0 +1,8 @@
+{
+  "UI": {
+    "modules": [
+      "MCash.dll",
+      "MUser.dll"
+    ]
+  }
+}

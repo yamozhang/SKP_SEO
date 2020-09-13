@@ -38,7 +38,7 @@
             this.txt_cellNum = new System.Windows.Forms.TextBox();
             this.lbl_validate = new System.Windows.Forms.Label();
             this.txt_validate = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_login = new System.Windows.Forms.Button();
             this.lbl_version = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -64,7 +64,7 @@
             // 
             this.lbl_password.AutoSize = true;
             this.lbl_password.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lbl_password.Location = new System.Drawing.Point(84, 85);
+            this.lbl_password.Location = new System.Drawing.Point(84, 88);
             this.lbl_password.Name = "lbl_password";
             this.lbl_password.Size = new System.Drawing.Size(44, 17);
             this.lbl_password.TabIndex = 0;
@@ -73,17 +73,17 @@
             // txt_password
             // 
             this.txt_password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_password.Location = new System.Drawing.Point(133, 82);
+            this.txt_password.Location = new System.Drawing.Point(133, 85);
             this.txt_password.Name = "txt_password";
             this.txt_password.PasswordChar = '*';
             this.txt_password.Size = new System.Drawing.Size(243, 23);
-            this.txt_password.TabIndex = 1;
+            this.txt_password.TabIndex = 2;
             // 
             // lbl_emploNum
             // 
             this.lbl_emploNum.AutoSize = true;
             this.lbl_emploNum.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lbl_emploNum.Location = new System.Drawing.Point(84, 133);
+            this.lbl_emploNum.Location = new System.Drawing.Point(84, 135);
             this.lbl_emploNum.Name = "lbl_emploNum";
             this.lbl_emploNum.Size = new System.Drawing.Size(44, 17);
             this.lbl_emploNum.TabIndex = 0;
@@ -92,16 +92,16 @@
             // txt_emploNum
             // 
             this.txt_emploNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_emploNum.Location = new System.Drawing.Point(133, 130);
+            this.txt_emploNum.Location = new System.Drawing.Point(133, 133);
             this.txt_emploNum.Name = "txt_emploNum";
             this.txt_emploNum.Size = new System.Drawing.Size(243, 23);
-            this.txt_emploNum.TabIndex = 1;
+            this.txt_emploNum.TabIndex = 3;
             // 
             // lbl_cellNum
             // 
             this.lbl_cellNum.AutoSize = true;
             this.lbl_cellNum.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lbl_cellNum.Location = new System.Drawing.Point(72, 181);
+            this.lbl_cellNum.Location = new System.Drawing.Point(72, 183);
             this.lbl_cellNum.Name = "lbl_cellNum";
             this.lbl_cellNum.Size = new System.Drawing.Size(56, 17);
             this.lbl_cellNum.TabIndex = 0;
@@ -110,10 +110,10 @@
             // txt_cellNum
             // 
             this.txt_cellNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_cellNum.Location = new System.Drawing.Point(133, 178);
+            this.txt_cellNum.Location = new System.Drawing.Point(133, 181);
             this.txt_cellNum.Name = "txt_cellNum";
             this.txt_cellNum.Size = new System.Drawing.Size(243, 23);
-            this.txt_cellNum.TabIndex = 1;
+            this.txt_cellNum.TabIndex = 4;
             // 
             // lbl_validate
             // 
@@ -131,20 +131,20 @@
             this.txt_validate.Location = new System.Drawing.Point(133, 229);
             this.txt_validate.Name = "txt_validate";
             this.txt_validate.Size = new System.Drawing.Size(243, 23);
-            this.txt_validate.TabIndex = 1;
+            this.txt_validate.TabIndex = 5;
             // 
-            // button1
+            // btn_login
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(133, 297);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(243, 38);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "登录";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_login.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_login.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_login.Location = new System.Drawing.Point(133, 294);
+            this.btn_login.Name = "btn_login";
+            this.btn_login.Size = new System.Drawing.Size(243, 38);
+            this.btn_login.TabIndex = 6;
+            this.btn_login.Text = "登录";
+            this.btn_login.UseVisualStyleBackColor = false;
+            this.btn_login.Click += new System.EventHandler(this.button1_Click);
             // 
             // lbl_version
             // 
@@ -152,7 +152,7 @@
             this.lbl_version.AutoSize = true;
             this.lbl_version.Font = new System.Drawing.Font("微软雅黑", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_version.ForeColor = System.Drawing.Color.DimGray;
-            this.lbl_version.Location = new System.Drawing.Point(411, 469);
+            this.lbl_version.Location = new System.Drawing.Point(428, 399);
             this.lbl_version.Name = "lbl_version";
             this.lbl_version.Size = new System.Drawing.Size(32, 16);
             this.lbl_version.TabIndex = 3;
@@ -160,12 +160,13 @@
             // 
             // AppLoginForm
             // 
+            this.AcceptButton = this.btn_login;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(455, 494);
+            this.ClientSize = new System.Drawing.Size(472, 424);
             this.Controls.Add(this.lbl_version);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_login);
             this.Controls.Add(this.txt_validate);
             this.Controls.Add(this.lbl_validate);
             this.Controls.Add(this.txt_cellNum);
@@ -178,6 +179,8 @@
             this.Controls.Add(this.lbl_name);
             this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AppLoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "升快排后台管理系统--非工作人员禁止使用，严禁泄露";
@@ -198,7 +201,7 @@
         private System.Windows.Forms.TextBox txt_cellNum;
         private System.Windows.Forms.Label lbl_validate;
         private System.Windows.Forms.TextBox txt_validate;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_login;
         private System.Windows.Forms.Label lbl_version;
     }
 }

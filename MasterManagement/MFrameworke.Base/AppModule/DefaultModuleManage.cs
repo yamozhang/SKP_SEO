@@ -1,7 +1,9 @@
 ﻿using System;
-using System.Text;
 using System.IO;
+using System.Linq;
+using System.Text;
 using System.Collections.Generic;
+using Microsoft.Extensions.Configuration;
 
 namespace MFrameworke.Base.AppModule
 {
@@ -13,7 +15,7 @@ namespace MFrameworke.Base.AppModule
         internal DefaultModuleManage()
         {
             this.Modules = new ModuleCollection();
-            this.LoadDefaultPath();
+            this.LoadDefaultPath(); 
         }
 
 
@@ -22,6 +24,17 @@ namespace MFrameworke.Base.AppModule
 
 
 
+        private IEnumerable<string> GetConfigModule()
+        {
+            ConfigurationBuilder configBuilder = new ConfigurationBuilder();
+            configBuilder.AddJsonFile(@".\app.config.json");
+            IConfiguration config = configBuilder.Build();
+            IConfigurationSection moduelSection = config.GetSection("UI:modules");
+            IEnumerable<string> modules = moduelSection.AsEnumerable()
+                                                       .Where(m => m.Key != "UI:modules")
+                                                       .Select(m => config[m.Key]);
+            return modules;
+        }
         private bool LoadModuleFromFile(string file)
         {
             IModule modul = ModuleLoader.LoadModule(file);
@@ -42,7 +55,20 @@ namespace MFrameworke.Base.AppModule
         }
         private void LoadDefaultPath()
         {
-            this.LoadModule(Path.GetFullPath("./"));
+            try
+            {
+                //获取配置文件中的UI模块
+                IEnumerable<string> modules = this.GetConfigModule();
+                foreach (string module in modules)
+                {
+                    //加载模块
+                    this.LoadModule(Path.GetFullPath(module));
+                }
+            }
+            catch
+            {
+                throw new Exception("未配置功能模块！");
+            }
         }
 
 
@@ -50,7 +76,7 @@ namespace MFrameworke.Base.AppModule
         public override bool LoadModule(string path)
         {
             if (File.Exists(path))
-                return this.LoadModuleFromFolder(path);
+                return this.LoadModuleFromFile(path);
             else if (Directory.Exists(path))
                 return this.LoadModuleFromFolder(path);
             return false;
