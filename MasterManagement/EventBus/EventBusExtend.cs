@@ -14,5 +14,9 @@ namespace MEventBus
             Event e = EventFactory.NewEvent(listener, source, pars);
             return bus.PublishEvent(e);
         }
+        public static TaskPromise PublishEvent(this EventBus bus, object pars)
+        {
+            return PublishEvent(bus, null, null, pars);
+        }
     }
 }

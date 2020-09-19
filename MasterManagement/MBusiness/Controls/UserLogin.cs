@@ -9,14 +9,8 @@ namespace MBusiness.Controls
     /// <summary>
     /// 提供User登录验证
     /// </summary>
-    internal class UserLogin : BaseControls
+    internal class UserLogin 
     {
-        internal override object Control => throw new NotImplementedException();
-        internal override TaskPromise Execute(Event e)
-        {
-            return null;
-        }
-
         public Task<bool> Login(string userName, string password)
         {
             return Task.Factory.StartNew(() =>
@@ -46,6 +40,5 @@ namespace MBusiness.Controls
                 }
             };
         }
-
     }
 }

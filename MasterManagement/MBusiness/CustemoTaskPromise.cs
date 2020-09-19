@@ -33,9 +33,9 @@ namespace MBusiness
         {
             this.Result = result;//设置result
             this.Complete = true;//任务完成
-            this.CallCustemoCallBack();//执行回调
+            this.CompleteCallBack();//执行回调
         }
-        internal void CallCustemoCallBack()
+        internal void CompleteCallBack()
         {
             this.CutemoCallBack?.Invoke(this);
         }
@@ -47,6 +47,14 @@ namespace MBusiness
         public override object GetResult()
         {
             return this.Result;
+        }
+
+        public override void Wait()
+        {
+            while (!this.Complete || !this.IsFail)
+            {
+                System.Threading.Thread.Sleep(100);
+            }
         }
     }
 }

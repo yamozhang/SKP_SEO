@@ -28,8 +28,11 @@ namespace Master.Setup
                 {
                     _(context);
                 }
-                catch
-                { }
+                catch(Exception e)
+                {
+                    Console.WriteLine("Error Msg: " + e.Message);
+                    Console.WriteLine("StackTrace: " + e.StackTrace);
+                }
             });
         }
 

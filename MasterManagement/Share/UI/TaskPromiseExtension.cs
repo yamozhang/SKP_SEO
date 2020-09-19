@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace Share.UI
 {
-    internal static class TaskPromiseExtend1
+    internal static class TaskPromiseExtend
     {
         public static void SetComplete(this TaskPromise promise, Control control, Action<TaskPromise> callback)
         {

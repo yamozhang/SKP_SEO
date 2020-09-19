@@ -27,6 +27,11 @@ namespace MEventBus
         public string Message { get; set; }
 
 
+
+        /// <summary>
+        /// 等待
+        /// </summary>
+        public abstract void Wait();
         /// <summary>
         /// 任务完成后能够返回的值
         /// </summary>
@@ -35,7 +40,6 @@ namespace MEventBus
         /// 支持设置回调，任务完成之后，不管成功还是失败
         /// </summary>
         public abstract void SetCompleteInvoke(Action<TaskPromise> callBack);
-        
         /// <summary>
         /// 任务完成后能够返回的值
         /// </summary>

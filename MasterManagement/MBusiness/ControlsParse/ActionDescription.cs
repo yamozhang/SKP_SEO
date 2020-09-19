@@ -7,6 +7,12 @@ using System.Threading.Tasks;
 
 namespace MBusiness.ControlsParse
 {
+    /*
+     * time:    2020/09/19
+     * content: 实现为每个执行的control自动设置TaskPromise
+     * Reviser: ymz
+     */
+
     internal class ActionDescription
     {
         internal ActionDescription(ControlDescription control, Dictionary<string, object> pars)
@@ -15,8 +21,9 @@ namespace MBusiness.ControlsParse
                 return;
 
             this.Controler = control;
-            this.Builder(pars);
+            this.ParseActionMetdate(pars);
         }
+
 
         /// <summary>
         /// 表示当前Control
@@ -33,7 +40,7 @@ namespace MBusiness.ControlsParse
 
 
 
-        private void Builder(Dictionary<string, object> pars)
+        private void ParseActionMetdate(Dictionary<string, object> pars)
         {
             if (!pars.ContainsKey("action") || pars["action"] == null)
                 throw new Exception("未指定action");
@@ -48,16 +55,16 @@ namespace MBusiness.ControlsParse
             return type.GetMethod(action, BindingFlags.Public | BindingFlags.Static | BindingFlags.Instance) ??
                         throw new Exception("Not found the action");
         }
-        //整理需要的参数
-        private List<KeyValuePair<string, object>> GetParameter(MethodInfo method, Dictionary<string, object> pars)
+        //整理执行Action时需要的参数
+        private List<KeyValuePair<string, object>> GetParameter(MethodInfo action, Dictionary<string, object> pars)
         {
-            if (method == null)
+            if (action == null)
                 return null;
 
             List<KeyValuePair<string, object>> parMapp = null;
             ParameterInfo[] prames = null;
 
-            prames = method.GetParameters();
+            prames = action.GetParameters();
             if (prames == null || prames.Length <= 0)
                 return parMapp;
 
@@ -79,34 +86,109 @@ namespace MBusiness.ControlsParse
             }
             return parMapp;
         }
-        //整理method的返回值为Task<T>的情况
-        private TaskPromise GetGenericDefaultTaskPromise(MethodInfo method,object inst, params object[] methodArgs)
+        //为当前control设置TaskPromise
+        private void SetTaskPromiseToControl(object control, TaskPromise promise)
         {
-            if (!method.ReturnType.IsGenericType || method.ReturnType.GetGenericTypeDefinition() != typeof(Task<>))
+            Type ctl = control.GetType();
+            var pro = ctl.GetProperty("Promise", BindingFlags.NonPublic | BindingFlags.Instance);
+            if (pro != null)
+            {
+                pro.SetValue(control, promise);
+            }
+        }
+
+
+        
+        //整理method的返回值为Task<T>的情况
+        private TaskWrapper GetGenericDefaultTaskPromise(MethodInfo action,object inst, params object[] methodArgs)
+        {
+            if (!action.ReturnType.IsGenericType || action.ReturnType.GetGenericTypeDefinition() != typeof(Task<>))
                 return null;
+            
+            Type promise = typeof(DefaultResultTaskPromise<>);
+            promise = promise.MakeGenericType(typeof(object));               //构造封闭泛型类型
 
-            Type[] returnType = method.ReturnType.GetGenericArguments();//泛型参数类型
-            Type generiTaskPromise = typeof(DefaultResultTaskPromise<>);
-            generiTaskPromise = generiTaskPromise.MakeGenericType(returnType[0]);//构造封闭泛型类型
-            object obj = method.Invoke(this.Controler.GetControlInst(), methodArgs);//执行action返回 Task<T>
+            Task<object> wrapper = new Task<object>(() =>
+            {
+                object task = action.Invoke(this.Controler.GetControlInst(), methodArgs);
+                Type taskType = task.GetType();
+                return taskType.GetProperty("Result", BindingFlags.Public | BindingFlags.Instance).GetValue(task);
+            });
 
-            return (TaskPromise)Activator.CreateInstance(generiTaskPromise, obj);//实例化DefaultResultTaskPromise<T>
+            return new TaskWrapper()
+            {
+                Result = (TaskPromise)Activator.CreateInstance(promise, wrapper),
+                Action = () => wrapper.Start()
+            };
         }
         //整理method的返回值为Taskd的情况
-        private TaskPromise GetDefaultTaskPromise(MethodInfo method, object inst, params object[] methodArgs)
+        private TaskWrapper GetDefaultTaskPromise(MethodInfo method, object inst, params object[] methodArgs)
         {
             if (method.ReturnType != typeof(Task))
                 return null;
 
-            object obj = method.Invoke(inst, methodArgs);
-            return new DefaultTaskPromise((Task)obj);
+            Task obj = new Task(() => ((Task)method.Invoke(inst, methodArgs)).Wait());
+            return new TaskWrapper()
+            {
+                Result = new DefaultTaskPromise(obj),
+                Action = () => obj.Start()
+            };
         }
         //包装method的返回值
-        private TaskPromise GetCustmoTaskPromise(MethodInfo method, object inst, params object[] methodArgs)
-        {  
-            return new DefaultResultTaskPromise<object>(Task.Factory.StartNew(()=> {
+        private TaskWrapper GetResultTaskPromise(MethodInfo method, object inst, params object[] methodArgs)
+        {
+            Task<object> task = new Task<object>(() =>
+            {
                 return method.Invoke(inst, methodArgs);
-            }));
+            });
+
+            return new TaskWrapper()
+            {
+                Result = new DefaultResultTaskPromise<object>(task),
+                Action = () => task.Start()
+            };
+        }
+        //包装一个无返回值得method
+        private TaskWrapper GetNoneTaskPromise(MethodInfo method, object inst, params object[] methodArgs)
+        {
+            Task t = new Task(() => { method.Invoke(inst, methodArgs); });
+            return new TaskWrapper() {
+                Result = new DefaultTaskPromise(t),
+                Action = () => t.Start()
+            };
+        }
+
+
+
+        private TaskPromise ExcuteCore()
+        {
+            TaskWrapper wrapper = null;
+            MethodInfo action = this.Action;
+            Object control = this.Controler.GetControlInst();
+            Object[] parms = this.Parms?.Select(k => k.Value).ToArray();
+
+            if (this.Action.ReturnType == null)//不存在返回类型的action
+            {
+                wrapper = this.GetNoneTaskPromise(action, control, parms);
+            }
+            else if (this.Action.ReturnType.IsGenericType && this.Action.ReturnType.GetGenericTypeDefinition() == typeof(Task<>))//存在返回类型为Task<T>的action
+            {
+                wrapper = this.GetGenericDefaultTaskPromise(action, control, parms);
+            }
+            else if (this.Action.ReturnType == typeof(Task))//存在返回类型为Task的action
+            {
+                wrapper = this.GetDefaultTaskPromise(action, control, parms);
+            }
+            else //存在一个正常的返回值的action
+            {
+                wrapper = this.GetResultTaskPromise(action, control, parms);
+            }
+
+            this.SetTaskPromiseToControl(control, wrapper.Result);
+
+            //执行
+            wrapper.Action();
+            return wrapper.Result;
         }
 
 
@@ -116,29 +198,14 @@ namespace MBusiness.ControlsParse
         /// <returns></returns>
         internal TaskPromise Execute()
         {
-            //不存在放回类型的action
-            if (this.Action.ReturnType == null)
-            {
-                return new DefaultTaskPromise(Task.Factory.StartNew(() => {
-                    this.Action.Invoke(this.Controler.GetControlInst(), this.Parms?.Select(k => k.Value).ToArray());
-                }));
-            }
-
-            //存在返回类型为Task<T>的action
-            if (this.Action.ReturnType.IsGenericType && this.Action.ReturnType.GetGenericTypeDefinition() == typeof(Task<>))
-            {
-                return this.GetGenericDefaultTaskPromise(this.Action, this.Controler.GetControlInst(), this.Parms?.Select(k => k.Value).ToArray());
-            }
-
-            //存在返回类型为Task的action
-            if (this.Action.ReturnType == typeof(Task))
-            {
-                return this.GetDefaultTaskPromise(this.Action, this.Controler.GetControlInst(), this.Parms?.Select(k => k.Value).ToArray());
-            }
-
-            //存在一个正常的返回值的action
-            return this.GetCustmoTaskPromise(this.Action, this.Controler.GetControlInst(), this.Parms?.Select(k => k.Value).ToArray());
+            return this.ExcuteCore();
         }
 
+
+        private class TaskWrapper
+        {
+            internal TaskPromise Result { get; set; }
+            internal Action Action { get; set; }
+        }
     }
 }

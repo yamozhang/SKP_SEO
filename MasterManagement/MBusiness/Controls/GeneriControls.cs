@@ -7,16 +7,22 @@ namespace MBusiness.Controls
     /// <summary>
     /// 一个通用的事件侦听器
     /// </summary>
-    internal class GeneriControls : BaseControls
+    internal class GeneriControls : IListener
     {
-        internal override object Control => null;
+        public object Listener => null;
 
-        internal override bool ShouldHandle(Event e)
+        public bool CanHandle(Event e)
         {
             return true;
         }
 
-        internal override TaskPromise Execute(Event e)
+        public TaskPromise Listening(Event e)
+        {
+            return this.Execute(e);
+        }
+
+
+        internal TaskPromise Execute(Event e)
         {
             ControlContextProvider controlProvider = new ControlContextProvider();
             ControlContext controlContext = controlProvider.Provider(e.Parmes);

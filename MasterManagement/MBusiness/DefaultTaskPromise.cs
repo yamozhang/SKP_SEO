@@ -24,6 +24,10 @@ namespace MBusiness
         public override Exception Exception => this._task?.Exception;
 
 
+        public override void Wait()
+        {
+            this._task?.Wait();
+        }
         public override object GetResult()
         {
             return null;

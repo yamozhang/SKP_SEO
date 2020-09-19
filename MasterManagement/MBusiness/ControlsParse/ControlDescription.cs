@@ -11,7 +11,7 @@ namespace MBusiness.ControlsParse
     {
         internal ControlDescription(Dictionary<string, object> pars)
         {
-            this.Builder(pars);
+            this.BuiltControl(pars);
         }
 
         /// <summary>
@@ -23,7 +23,7 @@ namespace MBusiness.ControlsParse
         /// </summary>
         internal ActionDescription Action { get; private set; }
 
-        private void Builder(Dictionary<string, object> pars)
+        private void BuiltControl(Dictionary<string, object> pars)
         {
             if (pars == null)
                 return;
@@ -35,6 +35,7 @@ namespace MBusiness.ControlsParse
         {
             if (!pars.ContainsKey("controler") || pars["controler"] == null)
                 throw new Exception("未指定controler.");
+
             string controler = pars["controler"].ToString();
 
             Type t_controler = Type.GetType("MBusiness.Controls." + controler) ?? throw new Exception("Not found the controler");
