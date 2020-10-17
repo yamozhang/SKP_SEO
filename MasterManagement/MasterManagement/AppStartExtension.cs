@@ -6,6 +6,7 @@ using MAppServices;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using MFrameworke.Base.AppModule;
+using MLogin.Services;
 
 namespace Master.Setup
 {
@@ -36,12 +37,10 @@ namespace Master.Setup
             {
                 return context => {
                     //登录验证
-                    using (AppLoginForm login = new AppLoginForm())
-                    {
-                        Application.Run(login);
-                        if (!login.IsLogin)
-                            Environment.Exit(0);
-                    }
+                    UserAuthService.AuthService.BeginCheckAuth();
+                    if (UserAuthService.AuthService.IsAuth)
+                        //Environment.Exit(0);
+
                     next?.Invoke(context);
                 };
             });
