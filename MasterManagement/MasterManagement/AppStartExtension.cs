@@ -39,9 +39,7 @@ namespace Master.Setup
                     //登录验证
                     UserAuthService.AuthService.BeginCheckAuth();
                     if (UserAuthService.AuthService.IsAuth)
-                        //Environment.Exit(0);
-
-                    next?.Invoke(context);
+                        next?.Invoke(context);
                 };
             });
         }

@@ -39,6 +39,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Share", "Share", "{1C9955B2
 		Share\UI\TaskPromiseExtension.cs = Share\UI\TaskPromiseExtension.cs
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GMUI", "GMUI\GMUI.csproj", "{CBF88057-D98A-488D-AD2A-0E30CD14FC0E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{F08C677F-F1FC-47A1-9B78-A9CC95BF7286}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F08C677F-F1FC-47A1-9B78-A9CC95BF7286}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F08C677F-F1FC-47A1-9B78-A9CC95BF7286}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBF88057-D98A-488D-AD2A-0E30CD14FC0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBF88057-D98A-488D-AD2A-0E30CD14FC0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBF88057-D98A-488D-AD2A-0E30CD14FC0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBF88057-D98A-488D-AD2A-0E30CD14FC0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -94,6 +100,7 @@ Global
 		{5723137F-52FC-4CD2-B0F8-19D6830B4709} = {06BEA6B7-8B24-45DD-A6B3-E1BD14687531}
 		{F08C677F-F1FC-47A1-9B78-A9CC95BF7286} = {5DBDD27C-E55E-480B-B4C1-2FB4B0245B2C}
 		{1C9955B2-4A83-4433-AFE6-46D41FFE2A93} = {43E2B467-8C82-433A-A5BE-ED1FBF1CCB55}
+		{CBF88057-D98A-488D-AD2A-0E30CD14FC0E} = {43E2B467-8C82-433A-A5BE-ED1FBF1CCB55}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {92EEF5EC-D980-4ABF-BAC8-95163A03F16C}

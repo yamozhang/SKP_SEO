@@ -26,5 +26,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="E:\我的秘密\WinFormSource\winforms\artifacts\bin\System.Windows.Forms\Debug\netcoreapp3.1\System.Windows.Forms.dll" />
+  </ItemGroup>
 
 </Project>
